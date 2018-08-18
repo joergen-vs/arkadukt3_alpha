@@ -1,12 +1,74 @@
-﻿<Window x:Class="Arkadukt3.MainWindow"
+﻿<Controls:MetroWindow
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    
+        xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+        xmlns:dockablz="clr-namespace:Dragablz.Dockablz;assembly=Dragablz"
+    x:Class="Arkadukt3.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Arkadukt3"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    mc:Ignorable="d"
+        Title="Arkadukt" Height="450" Width="800"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}">
+
+    <Window.Resources>
+        <system:String x:Key="Partition">QuickStart</system:String>
+    </Window.Resources>
     <Grid>
-        
+        <DockPanel>
+            <Menu DockPanel.Dock="Top"  Height="23" HorizontalAlignment="Stretch" Name="Menu1">
+                <MenuItem Name="MenuFile" Header="File" VerticalContentAlignment="Top" Height="21">
+                    <MenuItem Header="Nytt datasett" Click="actionNewAddml" InputGestureText="Ctrl+N">
+                        <MenuItem.InputBindings>
+                            <KeyBinding Key="N" Modifiers="Ctrl" />
+                        </MenuItem.InputBindings>
+                    </MenuItem>
+                    <MenuItem Header="Åpne datasett" Click="actionOpenAddml" InputGestureText="Ctrl+O">
+                        <MenuItem.InputBindings>
+                            <KeyBinding Key="O" Modifiers="Ctrl" />
+                        </MenuItem.InputBindings>
+                    </MenuItem>
+                    <MenuItem Header="Last inn på nytt" Click="actionReload" InputGestureText="Ctrl+R">
+                        <MenuItem.InputBindings>
+                            <KeyBinding Key="R" Modifiers="Ctrl" />
+                        </MenuItem.InputBindings>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Lagre" Click="actionSaveAddml" InputGestureText="Ctrl+S">
+                        <MenuItem.InputBindings>
+                            <KeyBinding Key="S" Modifiers="Ctrl" />
+                        </MenuItem.InputBindings>
+                    </MenuItem>
+                    <MenuItem Header="Lagre som" Click="actionSaveAddmlAs" InputGestureText="Alt+S">
+                        <MenuItem.InputBindings>
+                            <KeyBinding Key="S" Modifiers="Alt" />
+                        </MenuItem.InputBindings>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Lukk datasett" Click="actionCloseAddml" InputGestureText="Ctrl+W">
+                        <MenuItem.InputBindings>
+                            <KeyBinding Key="W" Modifiers="Ctrl" />
+                        </MenuItem.InputBindings>
+                    </MenuItem>
+                    <MenuItem Header="Avslutt" Click="actionClose" InputGestureText="Alt+W">
+                        <MenuItem.InputBindings>
+                            <KeyBinding Key="W" Modifiers="Alt" />
+                        </MenuItem.InputBindings>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+            <dockablz:Layout Partition="{StaticResource Partition}"  Margin="3,3,3,3">
+                <dragablz:TabablzControl Margin="8" ConsolidateOrphanedItems="True" Name="workTabs">
+                    <dragablz:TabablzControl.InterTabController>
+                        <dragablz:InterTabController Partition="{StaticResource Partition}" />
+                    </dragablz:TabablzControl.InterTabController>
+                    
+                </dragablz:TabablzControl>
+            </dockablz:Layout>
+        </DockPanel>
     </Grid>
-</Window>
+</Controls:MetroWindow>
