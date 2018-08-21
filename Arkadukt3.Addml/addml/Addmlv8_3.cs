@@ -4,23 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Arkadukt3.Addml
+namespace no.arkivverket.standarder.addml.v8_3
 {
-    using System.Xml.Serialization;
-
-    public class Addml
-    {
-        public static addml getAddmlFromFile(string filePath)
-        {
-            addml _addml = null;
-            return _addml;
-        }
-        public static addml getAddmlFromString(string addmlXml)
-        {
-            addml _addml = null;
-            return _addml;
-        }
-    }
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
@@ -35,6 +20,18 @@ namespace Arkadukt3.Addml
         private dataset[] datasetField;
 
         private string nameField;
+
+        public dataset this[string value]
+        {
+            get
+            {
+                dataset _dataset = null;
+                foreach (dataset dataset in datasetField)
+                    if (dataset.name.Equals(value))
+                        _dataset = dataset;
+                return _dataset;
+            }
+        }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("dataset")]
@@ -223,7 +220,15 @@ namespace Arkadukt3.Addml
 
         private additionalElements additionalElementsField;
 
-        private process[] processesField;
+        private processes processesField;
+
+        public additionalElement this[string value]
+        {
+            get
+            {
+                return additionalElementsField[value];
+            }
+        }
 
         /// <remarks/>
         public string description
@@ -253,7 +258,7 @@ namespace Arkadukt3.Addml
 
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("process", IsNullable = false)]
-        public process[] processes
+        public processes processes
         {
             get
             {
@@ -280,7 +285,19 @@ namespace Arkadukt3.Addml
 
         private additionalElement[] additionalElementField;
 
-        private process[] processesField;
+        private processes processesField;
+
+        public additionalElement this[string value]
+        {
+            get
+            {
+                additionalElement _item = null;
+                foreach (additionalElement item in additionalElementField)
+                    if (item.name.Equals(value))
+                        _item = item;
+                return _item;
+            }
+        }
 
         /// <remarks/>
         public string description
@@ -311,7 +328,7 @@ namespace Arkadukt3.Addml
 
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("process", IsNullable = false)]
-        public process[] processes
+        public processes processes
         {
             get
             {
@@ -336,17 +353,25 @@ namespace Arkadukt3.Addml
 
         private string valueField;
 
-        private property[] propertiesField;
+        private properties propertiesField;
 
         private additionalElements additionalElementsField;
 
-        private process[] processesField;
+        private processes processesField;
 
         private string nameField;
 
         private string dataTypeField;
 
         private string formatField;
+
+        public additionalElement this[string value]
+        {
+            get
+            {
+                return additionalElementsField[value];
+            }
+        }
 
         /// <remarks/>
         public string value
@@ -362,8 +387,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("property", IsNullable = false)]
-        public property[] properties
+        //[System.Xml.Serialization.XmlArrayItemAttribute("property", IsNullable = false)]
+        public properties properties
         {
             get
             {
@@ -390,7 +415,7 @@ namespace Arkadukt3.Addml
 
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("process", IsNullable = false)]
-        public process[] processes
+        public processes processes
         {
             get
             {
@@ -457,7 +482,15 @@ namespace Arkadukt3.Addml
 
         private string valueField;
 
-        private property[] propertiesField;
+        private properties propertiesField;
+
+        public property this[string value]
+        {
+            get
+            {
+                return propertiesField[value];
+            }
+        }
 
         private string nameField;
 
@@ -479,8 +512,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("property", IsNullable = false)]
-        public property[] properties
+        //[System.Xml.Serialization.XmlArrayItemAttribute("property", IsNullable = false)]
+        public properties properties
         {
             get
             {
@@ -545,13 +578,21 @@ namespace Arkadukt3.Addml
     public partial class process
     {
 
-        private parameter[] parametersField;
+        private parameters parametersField;
 
         private string nameField;
 
+        public parameter this[string value]
+        {
+            get
+            {
+                return parametersField[value];
+            }
+        }
+
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("parameter", IsNullable = false)]
-        public parameter[] parameters
+        //[System.Xml.Serialization.XmlArrayItemAttribute("parameter", IsNullable = false)]
+        public parameters parameters
         {
             get
             {
@@ -635,7 +676,15 @@ namespace Arkadukt3.Addml
 
         private additionalElements additionalElementsField;
 
-        private process[] processesField;
+        private processes processesField;
+
+        public additionalElement this[string value]
+        {
+            get
+            {
+                return additionalElementsField[value];
+            }
+        }
 
         /// <remarks/>
         public string description
@@ -665,7 +714,7 @@ namespace Arkadukt3.Addml
 
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("process", IsNullable = false)]
-        public process[] processes
+        public processes processes
         {
             get
             {
@@ -690,13 +739,13 @@ namespace Arkadukt3.Addml
 
         private flatFile[] flatFileField;
 
-        private flatFileDefinition[] flatFileDefinitionsField;
+        private flatFileDefinitions flatFileDefinitionsField;
 
         private structureTypes structureTypesField;
 
-        private query[] queriesField;
+        private queries queriesField;
 
-        private process[] processesField;
+        private processes processesField;
 
         private flatFileProcesses[] flatFileProcessesField;
 
@@ -715,8 +764,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("flatFileDefinition", IsNullable = false)]
-        public flatFileDefinition[] flatFileDefinitions
+        //[System.Xml.Serialization.XmlArrayItemAttribute("flatFileDefinition", IsNullable = false)]
+        public flatFileDefinitions flatFileDefinitions
         {
             get
             {
@@ -742,8 +791,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("query", IsNullable = false)]
-        public query[] queries
+        //[System.Xml.Serialization.XmlArrayItemAttribute("query", IsNullable = false)]
+        public queries queries
         {
             get
             {
@@ -756,8 +805,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("process", IsNullable = false)]
-        public process[] processes
+        //[System.Xml.Serialization.XmlArrayItemAttribute("process", IsNullable = false)]
+        public processes processes
         {
             get
             {
@@ -794,15 +843,15 @@ namespace Arkadukt3.Addml
     public partial class flatFile
     {
 
-        private property[] propertiesField;
+        private properties propertiesField;
 
         private string nameField;
 
         private string definitionReferenceField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("property", IsNullable = false)]
-        public property[] properties
+        //[System.Xml.Serialization.XmlArrayItemAttribute("property", IsNullable = false)]
+        public properties properties
         {
             get
             {
@@ -855,17 +904,25 @@ namespace Arkadukt3.Addml
 
         private string descriptionField;
 
-        private property[] propertiesField;
+        private properties propertiesField;
 
         private external externalField;
 
         private string recordDefinitionFieldIdentifierField;
 
-        private recordDefinition[] recordDefinitionsField;
+        private recordDefinitions recordDefinitionsField;
 
         private string nameField;
 
         private string typeReferenceField;
+
+        public recordDefinition this[string value]
+        {
+            get
+            {
+                return recordDefinitionsField[value];
+            }
+        }
 
         /// <remarks/>
         public string description
@@ -881,8 +938,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("property", IsNullable = false)]
-        public property[] properties
+        //[System.Xml.Serialization.XmlArrayItemAttribute("property", IsNullable = false)]
+        public properties properties
         {
             get
             {
@@ -922,7 +979,7 @@ namespace Arkadukt3.Addml
 
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("recordDefinition", IsNullable = false)]
-        public recordDefinition[] recordDefinitions
+        public recordDefinitions recordDefinitions
         {
             get
             {
@@ -986,7 +1043,7 @@ namespace Arkadukt3.Addml
 
         private string descriptionField;
 
-        private property[] propertiesField;
+        private properties propertiesField;
 
         private string recordDefinitionFieldValueField;
 
@@ -994,15 +1051,23 @@ namespace Arkadukt3.Addml
 
         private string fixedLengthField;
 
-        private repeatingGroup[] repeatingGroupsField;
+        private repeatingGroups repeatingGroupsField;
 
-        private key[] keysField;
+        private keys keysField;
 
-        private fieldDefinition[] fieldDefinitionsField;
+        private fieldDefinitions fieldDefinitionsField;
 
         private string nameField;
 
         private string typeReferenceField;
+
+        public fieldDefinition this[string value]
+        {
+            get
+            {
+                return fieldDefinitionsField[value];
+            }
+        }
 
         /// <remarks/>
         public string description
@@ -1018,8 +1083,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("property", IsNullable = false)]
-        public property[] properties
+        //[System.Xml.Serialization.XmlArrayItemAttribute("property", IsNullable = false)]
+        public properties properties
         {
             get
             {
@@ -1072,8 +1137,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("repeatingGroup", IsNullable = false)]
-        public repeatingGroup[] repeatingGroups
+        //[System.Xml.Serialization.XmlArrayItemAttribute("repeatingGroup", IsNullable = false)]
+        public repeatingGroups repeatingGroups
         {
             get
             {
@@ -1086,8 +1151,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("key", IsNullable = false)]
-        public key[] keys
+        //[System.Xml.Serialization.XmlArrayItemAttribute("key", IsNullable = false)]
+        public keys keys
         {
             get
             {
@@ -1100,8 +1165,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("fieldDefinition", IsNullable = false)]
-        public fieldDefinition[] fieldDefinitions
+        //[System.Xml.Serialization.XmlArrayItemAttribute("fieldDefinition", IsNullable = false)]
+        public fieldDefinitions fieldDefinitions
         {
             get
             {
@@ -1165,7 +1230,7 @@ namespace Arkadukt3.Addml
 
         private object itemField;
 
-        private fieldDefinitionReference[] fieldDefinitionReferencesField;
+        private fieldDefinitionReferences fieldDefinitionReferencesField;
 
         private string nameField;
 
@@ -1185,8 +1250,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("fieldDefinitionReference", IsNullable = false)]
-        public fieldDefinitionReference[] fieldDefinitionReferences
+        //[System.Xml.Serialization.XmlArrayItemAttribute("fieldDefinitionReference", IsNullable = false)]
+        public fieldDefinitionReferences fieldDefinitionReferences
         {
             get
             {
@@ -1279,7 +1344,7 @@ namespace Arkadukt3.Addml
 
         private object itemField;
 
-        private fieldDefinitionReference[] fieldDefinitionReferencesField;
+        private fieldDefinitionReferences fieldDefinitionReferencesField;
 
         private string nameField;
 
@@ -1300,8 +1365,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("fieldDefinitionReference", IsNullable = false)]
-        public fieldDefinitionReference[] fieldDefinitionReferences
+        //[System.Xml.Serialization.XmlArrayItemAttribute("fieldDefinitionReference", IsNullable = false)]
+        public fieldDefinitionReferences fieldDefinitionReferences
         {
             get
             {
@@ -1390,13 +1455,21 @@ namespace Arkadukt3.Addml
     public partial class flatFileDefinitionReference
     {
 
-        private recordDefinitionReference[] recordDefinitionReferencesField;
+        private recordDefinitionReferences recordDefinitionReferencesField;
 
         private string nameField;
 
+        public recordDefinitionReference this[string value]
+        {
+            get
+            {
+                return recordDefinitionReferencesField[value];
+            }
+        }
+
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("recordDefinitionReference", IsNullable = false)]
-        public recordDefinitionReference[] recordDefinitionReferences
+        //[System.Xml.Serialization.XmlArrayItemAttribute("recordDefinitionReference", IsNullable = false)]
+        public recordDefinitionReferences recordDefinitionReferences
         {
             get
             {
@@ -1433,13 +1506,21 @@ namespace Arkadukt3.Addml
     public partial class recordDefinitionReference
     {
 
-        private fieldDefinitionReference[] fieldDefinitionReferencesField;
+        private fieldDefinitionReferences fieldDefinitionReferencesField;
 
         private string nameField;
 
+        public fieldDefinitionReference this[string value]
+        {
+            get
+            {
+                return fieldDefinitionReferencesField[value];
+            }
+        }
+
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("fieldDefinitionReference", IsNullable = false)]
-        public fieldDefinitionReference[] fieldDefinitionReferences
+        //[System.Xml.Serialization.XmlArrayItemAttribute("fieldDefinitionReference", IsNullable = false)]
+        public fieldDefinitionReferences fieldDefinitionReferences
         {
             get
             {
@@ -1489,7 +1570,7 @@ namespace Arkadukt3.Addml
 
         private string descriptionField;
 
-        private property[] propertiesField;
+        private properties propertiesField;
 
         private string startPosField;
 
@@ -1507,7 +1588,7 @@ namespace Arkadukt3.Addml
 
         private fieldParts fieldPartsField;
 
-        private code[] codesField;
+        private codes codesField;
 
         private string nameField;
 
@@ -1527,8 +1608,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("property", IsNullable = false)]
-        public property[] properties
+        //[System.Xml.Serialization.XmlArrayItemAttribute("property", IsNullable = false)]
+        public properties properties
         {
             get
             {
@@ -1650,8 +1731,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("code", IsNullable = false)]
-        public code[] codes
+        //[System.Xml.Serialization.XmlArrayItemAttribute("code", IsNullable = false)]
+        public codes codes
         {
             get
             {
@@ -1810,15 +1891,15 @@ namespace Arkadukt3.Addml
     public partial class structureTypes
     {
 
-        private flatFileType[] flatFileTypesField;
+        private flatFileTypes flatFileTypesField;
 
-        private recordType[] recordTypesField;
+        private recordTypes recordTypesField;
 
-        private fieldType[] fieldTypesField;
+        private fieldTypes fieldTypesField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("flatFileType", IsNullable = false)]
-        public flatFileType[] flatFileTypes
+        //[System.Xml.Serialization.XmlArrayItemAttribute("flatFileType", IsNullable = false)]
+        public flatFileTypes flatFileTypes
         {
             get
             {
@@ -1831,8 +1912,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("recordType", IsNullable = false)]
-        public recordType[] recordTypes
+        //[System.Xml.Serialization.XmlArrayItemAttribute("recordType", IsNullable = false)]
+        public recordTypes recordTypes
         {
             get
             {
@@ -1845,8 +1926,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("fieldType", IsNullable = false)]
-        public fieldType[] fieldTypes
+        //[System.Xml.Serialization.XmlArrayItemAttribute("fieldType", IsNullable = false)]
+        public fieldTypes fieldTypes
         {
             get
             {
@@ -2342,15 +2423,23 @@ namespace Arkadukt3.Addml
     public partial class flatFileProcesses
     {
 
-        private process[] processesField;
+        private processes processesField;
 
         private recordProcesses[] recordProcessesField;
 
         private string flatFileReferenceField;
 
+        public process this[string value]
+        {
+            get
+            {
+                return processesField[value];
+            }
+        }
+
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("process", IsNullable = false)]
-        public process[] processes
+        public processes processes
         {
             get
             {
@@ -2401,15 +2490,23 @@ namespace Arkadukt3.Addml
     public partial class recordProcesses
     {
 
-        private process[] processesField;
+        private processes processesField;
 
         private fieldProcesses[] fieldProcessesField;
 
         private string definitionReferenceField;
 
+        public process this[string value]
+        {
+            get
+            {
+                return processesField[value];
+            }
+        }
+
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("process", IsNullable = false)]
-        public process[] processes
+        public processes processes
         {
             get
             {
@@ -2460,13 +2557,21 @@ namespace Arkadukt3.Addml
     public partial class fieldProcesses
     {
 
-        private process[] processesField;
+        private processes processesField;
 
         private string definitionReferenceField;
 
+        public process this[string value]
+        {
+            get
+            {
+                return processesField[value];
+            }
+        }
+
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("process", IsNullable = false)]
-        public process[] processes
+        public processes processes
         {
             get
             {
@@ -2507,7 +2612,23 @@ namespace Arkadukt3.Addml
 
         private dataObject[] dataObjectField;
 
-        private process[] processesField;
+        private processes processesField;
+
+        public dataObject this[string value]
+        {
+            get
+            {
+                dataObject _item = null;
+                foreach (dataObject item in dataObjectField)
+                {
+                    if (item.name.Equals(value))
+                    {
+                        _item = item;
+                    }
+                }
+                return _item;
+            }
+        }
 
         /// <remarks/>
         public string description
@@ -2538,7 +2659,7 @@ namespace Arkadukt3.Addml
 
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("process", IsNullable = false)]
-        public process[] processes
+        public processes processes
         {
             get
             {
@@ -2563,13 +2684,21 @@ namespace Arkadukt3.Addml
 
         private string descriptionField;
 
-        private property[] propertiesField;
+        private properties propertiesField;
 
         private dataObjects dataObjectsField;
 
-        private process[] processesField;
+        private processes processesField;
 
         private string nameField;
+
+        public dataObject this[string value]
+        {
+            get
+            {
+                return dataObjectsField[value];
+            }
+        }
 
         /// <remarks/>
         public string description
@@ -2585,8 +2714,8 @@ namespace Arkadukt3.Addml
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("property", IsNullable = false)]
-        public property[] properties
+        //[System.Xml.Serialization.XmlArrayItemAttribute("property", IsNullable = false)]
+        public properties properties
         {
             get
             {
@@ -2613,7 +2742,7 @@ namespace Arkadukt3.Addml
 
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("process", IsNullable = false)]
-        public process[] processes
+        public processes processes
         {
             get
             {
@@ -2652,6 +2781,22 @@ namespace Arkadukt3.Addml
 
         private flatFileDefinition[] flatFileDefinitionField;
 
+        public flatFileDefinition this[string value]
+        {
+            get
+            {
+                flatFileDefinition _item = null;
+                foreach (flatFileDefinition item in flatFileDefinitionField)
+                {
+                    if (item.name.Equals(value))
+                    {
+                        _item = item;
+                    }
+                }
+                return _item;
+            }
+        }
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("flatFileDefinition")]
         public flatFileDefinition[] flatFileDefinition
@@ -2678,6 +2823,22 @@ namespace Arkadukt3.Addml
     {
 
         private recordDefinition[] recordDefinitionField;
+
+        public recordDefinition this[string value]
+        {
+            get
+            {
+                recordDefinition _item = null;
+                foreach (recordDefinition item in recordDefinitionField)
+                {
+                    if (item.name.Equals(value))
+                    {
+                        _item = item;
+                    }
+                }
+                return _item;
+            }
+        }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("recordDefinition")]
@@ -2760,6 +2921,22 @@ namespace Arkadukt3.Addml
 
         private fieldDefinition[] fieldDefinitionField;
 
+        public fieldDefinition this[string value]
+        {
+            get
+            {
+                fieldDefinition _item = null;
+                foreach (fieldDefinition item in fieldDefinitionField)
+                {
+                    if (item.name.Equals(value))
+                    {
+                        _item = item;
+                    }
+                }
+                return _item;
+            }
+        }
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("fieldDefinition")]
         public fieldDefinition[] fieldDefinition
@@ -2813,6 +2990,18 @@ namespace Arkadukt3.Addml
     {
 
         private flatFileType[] flatFileTypeField;
+
+        public flatFileType this[string value]
+        {
+            get
+            {
+                flatFileType _item = null;
+                foreach (flatFileType item in flatFileTypeField)
+                    if (item.name.Equals(value))
+                        _item = item;
+                return _item;
+            }
+        }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("flatFileType")]
@@ -2868,6 +3057,22 @@ namespace Arkadukt3.Addml
 
         private recordType[] recordTypeField;
 
+        public recordType this[string value]
+        {
+            get
+            {
+                recordType _recordType = null;
+                foreach(recordType recordType in recordTypeField)
+                {
+                    if(recordType.name.Equals(value))
+                    {
+                        _recordType = recordType;
+                    }
+                }
+                return _recordType;
+            }
+        }
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("recordType")]
         public recordType[] recordType
@@ -2894,6 +3099,18 @@ namespace Arkadukt3.Addml
     {
 
         private fieldType[] fieldTypeField;
+
+        public fieldType this[string value]
+        {
+            get
+            {
+                fieldType _item = null;
+                foreach (fieldType item in fieldTypeField)
+                    if (item.name.Equals(value))
+                        _item = item;
+                return _item;
+            }
+        }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("fieldType")]
@@ -2976,6 +3193,22 @@ namespace Arkadukt3.Addml
 
         private process[] processField;
 
+        public process this[string value]
+        {
+            get
+            {
+                process _item = null;
+                foreach(process item in processField)
+                {
+                    if(item.name.Equals(value))
+                    {
+                        _item = item;
+                    }
+                }
+                return _item;
+            }
+        }
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("process")]
         public process[] process
@@ -3002,6 +3235,22 @@ namespace Arkadukt3.Addml
     {
 
         private parameter[] parameterField;
+
+        public parameter this[string value]
+        {
+            get
+            {
+                parameter _item = null;
+                foreach(parameter item in parameterField)
+                {
+                    if(item.name.Equals(value))
+                    {
+                        _item = item;
+                    }
+                }
+                return _item;
+            }
+        }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("parameter")]
@@ -3030,6 +3279,22 @@ namespace Arkadukt3.Addml
 
         private recordDefinitionReference[] recordDefinitionReferenceField;
 
+        public recordDefinitionReference this[string value]
+        {
+            get
+            {
+                recordDefinitionReference _item = null;
+                foreach (recordDefinitionReference item in recordDefinitionReferenceField)
+                {
+                    if (item.name.Equals(value))
+                    {
+                        _item = item;
+                    }
+                }
+                return _item;
+            }
+        }
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("recordDefinitionReference")]
         public recordDefinitionReference[] recordDefinitionReference
@@ -3057,6 +3322,22 @@ namespace Arkadukt3.Addml
 
         private fieldDefinitionReference[] fieldDefinitionReferenceField;
 
+        public fieldDefinitionReference this[string value]
+        {
+            get
+            {
+                fieldDefinitionReference _item = null;
+                foreach (fieldDefinitionReference item in fieldDefinitionReferenceField)
+                {
+                    if (item.name.Equals(value))
+                    {
+                        _item = item;
+                    }
+                }
+                return _item;
+            }
+        }
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("fieldDefinitionReference")]
         public fieldDefinitionReference[] fieldDefinitionReference
@@ -3083,6 +3364,22 @@ namespace Arkadukt3.Addml
     {
 
         private property[] propertyField;
+
+        public property this[string value]
+        {
+            get
+            {
+                property _item = null;
+                foreach (property item in propertyField)
+                {
+                    if (item.name.Equals(value))
+                    {
+                        _item = item;
+                    }
+                }
+                return _item;
+            }
+        }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("property")]

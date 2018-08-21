@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Arkadukt3.Addml\Standarder.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="fixedLengthFiles\" />
+    <Folder Include="delimitedFiles\" />
+    <Folder Include="xmlFiles\" />
+  </ItemGroup>
+
+</Project>

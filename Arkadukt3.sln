@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arkadukt3", "Arkadukt3\Arkadukt3.csproj", "{71E5B0B5-D6CF-4F3B-AC89-568AA45D475C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arkadukt3.Addml", "Arkadukt3.Addml\Arkadukt3.Addml.csproj", "{0DA1DBDB-7FB4-4BEB-B000-EE0048740DA2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Standarder", "Arkadukt3.Addml\Standarder.csproj", "{0DA1DBDB-7FB4-4BEB-B000-EE0048740DA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchiveFileReader", "ArchiveFileReader\ArchiveFileReader.csproj", "{3B992BA1-D519-48A0-8376-0C18B2A751D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0DA1DBDB-7FB4-4BEB-B000-EE0048740DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DA1DBDB-7FB4-4BEB-B000-EE0048740DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DA1DBDB-7FB4-4BEB-B000-EE0048740DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B992BA1-D519-48A0-8376-0C18B2A751D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B992BA1-D519-48A0-8376-0C18B2A751D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B992BA1-D519-48A0-8376-0C18B2A751D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B992BA1-D519-48A0-8376-0C18B2A751D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

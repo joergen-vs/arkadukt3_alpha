@@ -123,9 +123,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Arkadukt3.Addml\Arkadukt3.Addml.csproj">
+    <ProjectReference Include="..\Arkadukt3.Addml\Standarder.csproj">
       <Project>{0DA1DBDB-7FB4-4BEB-B000-EE0048740DA2}</Project>
-      <Name>Arkadukt3.Addml</Name>
+      <Name>Standarder</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
